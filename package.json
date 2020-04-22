@@ -1,0 +1,36 @@
+{
+  "name": "evaluation-testcafe",
+  "version": "0.0.1",
+  "description": "This is a test-ware for evaluation of TestCafe test automation tools.",
+  "main": "-",
+  "scripts": {
+    "test": "testcafe chrome tests/*.js",
+    "lint": "eslint tests --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szikszail/evaluation-testcafe.git"
+  },
+  "keywords": [
+    "Test",
+    "automation",
+    "Tool",
+    "Evaluation",
+    "JavaScript",
+    "TestCafe"
+  ],
+  "author": "Adrian Benko <benko.adrian@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/szikszail/evaluation-template/issues"
+  },
+  "homepage": "https://github.com/szikszail/evaluation-template#readme",
+  "dependencies": {
+    "testcafe": "^1.8.4",
+    "eslint": "^6.8.0",
+    "husky": "^4.0.10"
+  },
+  "husky": {
+    "precommit": "npm run lint"
+  }
+}
