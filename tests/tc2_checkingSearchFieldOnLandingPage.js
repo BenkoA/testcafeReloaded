@@ -1,12 +1,10 @@
 import { Selector } from 'testcafe';
 import AngularHomePage from '../helpers/pages/angularHomePage';
-import AngularStartPage from '../helpers/pages/angularStartPage';
 
 fixture`TC2 - Checking Search field on Landing page`
     .page`https://angular.io`;
 
 const homePage = new AngularHomePage();
-const startPage = new AngularStartPage();
 
 test('Search input in the top navbar should be visible', async t => {
     await t
@@ -23,14 +21,18 @@ test('And it should be "Search" as placeholder', async t => {
         .expect(homePage.searchInput.getAttribute('placeholder')).eql('Search');
 });
 
-test('When it is clicked in and "directive" is typed in it Then "Directive" should be listed in the "API" section', async t => {
+test(`When it is clicked in 
+    And "directive" is typed in it 
+    Then "Directive" should be listed in the "API" section`, async t => {
     await t
         .click(homePage.searchInput)
         .typeText(homePage.searchInput, 'directive')
         .expect(homePage.apiSection.exists).ok();
 });
 
-test('When "Directive" is clicked in the "API" section Then the URL should be https://angular.io/api/core/Directive And the title on the content should be "Directive"', async t => {
+test(`When "Directive" is clicked in the "API" section 
+    Then the URL should be https://angular.io/api/core/Directive 
+    And the title on the content should be "Directive"`, async t => {
     await t
         .typeText(homePage.searchInput, 'directive')
         .click(homePage.apiSection);
