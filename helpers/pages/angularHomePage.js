@@ -6,5 +6,12 @@ export default class AngularHomePage {
         this.textInHeroSection = Selector('div.hero-headline');
         this.getStartedButton = Selector('a.button.hero-cta');
         this.searchInput = Selector('input[type="search"]');
+
+        this.apiSection = Selector('div.search-area.ng-star-inserted h3')
+            .withText("API")
+            .sibling("ul")
+            .find('span')
+            .withText("Directive");
+
     }
 }
